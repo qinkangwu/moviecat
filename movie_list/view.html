@@ -1,0 +1,33 @@
+<h1 class="page-header">{{title}}</h1>
+<div class="list-group">
+	<a ng-repeat="movie in movies track by $index" href="#" class="list-group-item">
+		<div class="media">
+			<div class="media-left" href="#">
+				<img ng-src="{{movie.images.small}}" alt="{{movie.title}}" >
+			</div>
+			<div class="media-body"><span class="badge pull-right">{{movie.rating.average}}</span>
+				<h3 class="media-heading">{{movie.title}}</h3>
+				<p>类型：<span>{{movie.genres.join('、')}}&nbsp;&nbsp;&nbsp;&nbsp;上映年份：<span>{{movie.year}}</span></p>
+				<p>导演：<span><span ng-repeat="d in movie.directors track by $index">{{d.name}}{{$last?'':'、'}}</span></span></p>
+				<p>主演：<span><span ng-repeat="d in movie.casts track by $index">{{d.name}}{{$last?'':'、'}}</span></span></p>
+			</div>
+		</div>
+	</a>
+</div>
+<p ng-show="!loading">总共：{{totalCount}}条记录，第{{page}}/{{totalPage}}页</p>
+<nav>
+	<ul class="pager">
+		<li ng-hide="page<=1"><a href="#/{{category}}/{{page-1}}?q={{q}}">Previous</a></li>
+		<li ng-hide="page>=totalPage"><a href="#/{{category}}/{{page+1}}?q={{q}}">Next</a></li>
+	</ul>
+</nav>
+
+
+<div class="loading" ng-hide="!loading">
+	<div class="sk-folding-cube">
+		<div class="sk-cube1 sk-cube"></div>
+		<div class="sk-cube2 sk-cube"></div>
+		<div class="sk-cube4 sk-cube"></div>
+		<div class="sk-cube3 sk-cube"></div>
+	</div>
+</div>
