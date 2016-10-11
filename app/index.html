@@ -7,12 +7,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>kevin</title>
-
-	<!-- Bootstrap core CSS -->
 	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-
-	<!-- Custom styles for this template -->
+	<!-- build:css style.css -->
 	<link href="app.css" rel="stylesheet">
+	<!-- endbuild -->
 </head>
 
 <body ng-app="moviecat">
@@ -26,7 +24,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Kevin</a>
+			<span class="navbar-brand">Kevin</span>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<form ng-controller="SearchController" class="navbar-form navbar-right" ng-submit="search()">
@@ -52,11 +50,11 @@
 </body>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<!-- build:js script.js -->
 <script src="app.js"></script>
 <script src="movie_list/module.js"></script>
-<!--<script src="in_theaters/module.js"></script>
-<script src="coming_soon/module.js"></script>
-<script src="top250/module.js"></script>-->
+<script src="movie_detail/module.js"></script>
 <script src="components/http-service.js"></script>
 <script src="components/auto-active.js"></script>
+<!-- endbuild -->
 </html>
